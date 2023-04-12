@@ -1,0 +1,227 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body,main{
+    height:100vh;
+    width:100vw;
+    margin: 0px;
+    background-color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow:hidden;
+    background-image:linear-gradient(135deg, #560001, #292626 );
+}
+
+/* this is an experimental cursor, it's not fully functional yet
+.cursor{
+    position:absolute;
+    left:0;
+    top:0;
+    width:2em;
+    height:2em;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    cursor:none;
+}
+*/
+
+main{
+    background-image: url("https://wallpapers.com/images/featured/eaiivsm48tbupy96.jpg");
+    background-size:cover;
+    background-position:center 0%;
+    position: relative;
+    z-index:2;
+    transition: transform 500ms cubic-beizer(.13,.53,.38,.97);
+}
+
+#nav-toggle{
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    z-index:3;
+    left:50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    background-color: rgba(152,251,152,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 5rem;
+    outline:none;
+    box-shadow: 0rem 0rem 4rem rgba( 0 0 0/35%);
+    border-width:10px;
+    cursor: pointer;
+    transition: transform, background-color;
+    transition-timing-function:ease;
+    transition-duration: 400ms;
+}
+
+#nav-toggle:hover{
+    transform: translate(-50%) scale(1.5);
+}
+
+#nav-toggle:active{
+    transform: translate(-50%) scale(1.38);
+    cursor:grabbing;
+}
+
+#nav-toggle > p{
+    position: absolute;
+    left: 50%;
+    top: -18%;
+    transform: translate(-50%,-50%) scale(0.9);
+    color: rgb(246,231,224);
+    font-size: 3rem;
+    opacity: 0;
+    transition: transform, opacity;
+    transition-timing-function:ease;
+    transition-duration: 400ms;
+    cursor:grab;
+}
+
+body:not([data-nav="true"]) > #nav-toggle:hover > .open{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+body[data-nav="true"] > #nav-toggle > .close{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+body[data-nav="true"] > main{
+    transform: translateY(-50%);
+}
+
+body[data-nav="false"] > main{
+    transform: translateY(0%);
+}
+
+#nav-links > .nav-link{
+    text-decoration:none;
+}
+
+#nav-links > .nav-link > .nav-link-label{
+    color:white;
+    font-size:1.25rem;
+    margin:0rem;
+    text-transform: uppercase;
+}
+
+#nav-links >.nav-link > .nav-link-image{
+ width: max(20vw, 400px);
+ aspect-ratio: 1.8/1;
+ border-radius: 0.5rem;
+ margin-top: 0.75rem;
+ object-fit: cover;
+}
+
+nav{
+    padding-right: 2em;
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom :0px;
+    z-index:1;
+    overflow: scroll;
+}
+
+#nav-links{
+    display: flex;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: clamp(2rem,2vw,3rem);
+    padding: 0rem clamp(1rem,2vw,2rem);
+    transform: translateY(70%) scale(0.9);
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+}
+
+body[data-nav="true"] > nav > #nav-links{
+    transform: translateY(0%) scale(1);
+}
+
+nav::-webkit-scrollbar{
+    display: none;
+}
+
+section{
+    top:-10%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    color: #fff;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title{
+    font-size: 4em;
+    margin-bottom: 0.7em;
+}
+
+.content{
+    position: relative;
+    width: 80em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .image{
+    margin-left:2em;
+    position: relative;
+    width: 32em;
+    height: 20em;
+    overflow: hidden;
+}
+
+.content .image img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.content .text-box{
+    z-index: 222;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 20em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform: translate(-80px, 50px);
+}
+
+.content .text-box h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+@media(max-width:1920px){
+    html{
+        font-size:100%;
+    }
+}
+
+@media(max-width:720px){
+    html{
+        font-size:70%;
+    }
+}
+
+@media(max-width:480px){
+    html{
+        font-size:50%;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <title>Curtain Scroll Effect</title>
+    <link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>       
+</head>
+<body data-nav="false">
+    <!--
+        This is an experimental cursor, it's not fully functional yet.
+    <div class="cursor">
+        <svg stroke="currentColor" fill="#f2f2f2" stroke-width="0" viewBox="0 0 512 512" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M384 16c48 32 64 80 64 112 0 128 0 256-32 368l-16-112c-48 32-112 64-144 64s-96-32-144-64L96 496C64 384 64 256 64 128c0-32 16-80 64-112-16 48-16 96 0 128 64-32 192-32 256 0 16-32 16-80 0-128zm0 256c-33.7 46.8-52 57.2-112 80 33.5 32 95.5 21.5 128-16 14.1-16.3 6.8-44.6-16-64zm-256 0c-22.8 19.4-30.1 47.7-16 64 32.5 37.5 94.5 48 128 16-60-22.8-78.3-33.2-112-80z"></path>
+        </svg>
+    </div>
+    -->
+    <main>
+        <section class="sec-01">
+            <div class="container">
+              <h2 class="main-title">Curtain Navigation</h2>
+              <div class="content">
+                <div class="image">
+                  <img src="https://images.unsplash.com/photo-1605379399843-5870eea9b74e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1198&q=80" alt="">
+                </div>
+                <div class="text-box">
+                  <h3>What is this?</h3>
+                  <p>
+                    So This is a basically a trial for me to create the curtain style effect for the navigation bar.
+                    In most websites the navigation bar is on the top of the page or is brought down by clicking a button
+                    but here i decided to spice things up and take the navigation bar down and it only reveals when you
+                    click on the menu button present on the bottom center of the screen.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </section>
+    </main>
+    <nav id="nav">
+        <div id="nav-links">
+            <a href="#" class="nav-link">
+                <h2 class="nav-link-label">Home</h2>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=658&q=80" alt="Home" class="nav-link-image">
+            </a>
+            <a href="#" class="nav-link">
+                <h2 class="nav-link-label">Projects</h2>
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Projects" class="nav-link-image">
+            </a>
+            <a href="#" class="nav-link">
+                <h2 class="nav-link-label">Achievements</h2>
+                <img src="https://images.unsplash.com/photo-1629721671030-a83edbb11211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80" alt="Achievements" class="nav-link-image">
+            </a>
+            <a href="#" class="nav-link">
+                <h2 class="nav-link-label">Resume</h2>
+                <img src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1196&q=80" alt="Resume" class="nav-link-image">
+            </a>
+            <a href="#" class="nav-link">
+                <h2 class="nav-link-label">Contact</h2>
+                <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Contact" class="nav-link-image">
+            </a>
+        </div>
+    </nav>
+    <button id ="nav-toggle" type = "button" onclick="toggleNav()">
+        <p class="open"><svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 6C8 7.10457 7.10457 8 6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6Z" fill="black"></path>
+            <path d="M8 12C8 13.1046 7.10457 14 6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12Z" fill="black"></path>
+            <path d="M6 20C7.10457 20 8 19.1046 8 18C8 16.8954 7.10457 16 6 16C4.89543 16 4 16.8954 4 18C4 19.1046 4.89543 20 6 20Z" fill="black"></path>
+            <path d="M14 6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6C10 4.89543 10.8954 4 12 4C13.1046 4 14 4.89543 14 6Z" fill="black"></path>
+            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="black"></path>
+            <path d="M14 18C14 19.1046 13.1046 20 12 20C10.8954 20 10 19.1046 10 18C10 16.8954 10.8954 16 12 16C13.1046 16 14 16.8954 14 18Z" fill="black"></path>
+            <path d="M18 8C19.1046 8 20 7.10457 20 6C20 4.89543 19.1046 4 18 4C16.8954 4 16 4.89543 16 6C16 7.10457 16.8954 8 18 8Z" fill="black"></path>
+            <path d="M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12Z" fill="black"></path>
+            <path d="M18 20C19.1046 20 20 19.1046 20 18C20 16.8954 19.1046 16 18 16C16.8954 16 16 16.8954 16 18C16 19.1046 16.8954 20 18 20Z" fill="black"></path>
+        </svg></p>
+        <p class="close"><svg stroke="currentColor" fill="black" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2c-1.5 0-2.8.4-3.9 1.2l.8.7C5.8 3.3 6.8 3 8 3c3.3 0 6 2.7 6 6h1c0-3.9-3.1-7-7-7zM1 3l1.6 1.5C1.6 5.7 1 7.3 1 9h1c0-1.5.5-2.8 1.4-3.8l2.2 2C5.2 7.7 5 8.3 5 9c0 1.7 1.3 3 3 3 .8 0 1.5-.3 2-.8l3 2.8.7-.7-12-11L1 3zm5.3 4.9l2.9 2.7c-.3.2-.7.4-1.2.4-1.1 0-2-.9-2-2 0-.4.1-.8.3-1.1zM11 9.5l-1-.9c-.2-.8-.9-1.5-1.8-1.6l-1-.9c.3-.1.5-.1.8-.1 1.7 0 3 1.3 3 3v.5z"></path>
+        </svg></p>
+    </button>
+
+    <script src = "script.js"></script>
+</body>
+</html>
